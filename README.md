@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-#Boleto
+## Boleto
 
 O objetivo é construir uma API REST para geração de boletos que será consumido por um módulo de um sistema de gestão financeira de microempresas.
 
