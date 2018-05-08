@@ -194,8 +194,3 @@ Exemplo do retorno:
 ## Log da Aplicação
 
 O log da aplicação pode ser visto pelo console ou através do arquivo `boleto.log` na raiz do projeto ou caminho de execução. O log ajuda a verificar passos executados dentro da aplicação, assim como possíveis erros ocorridos dando mais detalhes sobre o que pode ter causado o erro.
-=======
-# boleto
-
-Desenvolvimento do projeto boleto utilizando-se da linguagem JAVA
->>>>>>> branch 'master' of https://github.com/cleversonhasse/boleto
