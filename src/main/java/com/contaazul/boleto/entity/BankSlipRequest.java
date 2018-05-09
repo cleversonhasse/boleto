@@ -13,6 +13,7 @@ import org.hibernate.validator.constraints.Length;
 import com.contaazul.boleto.controller.BankSlipController;
 import com.contaazul.boleto.model.BankSlip;
 import com.contaazul.boleto.model.BankSlipStatus;
+import com.contaazul.boleto.util.BoletoConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,22 +30,22 @@ public class BankSlipRequest implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@JsonProperty("total_in_cents")
-	@NotNull(message = "Total in cents must not be null")
-	@Positive(message = "Total in cents must be a positive number, greater than 0")
+	@NotNull(message = BoletoConstants.ERROR_MSG_TOTAL_IN_CENTS_NOT_NULL)
+	@Positive(message = BoletoConstants.ERROR_MSG_TOTAL_IN_CENTS_POSITIVE_NUMBER)
     private int totalInCents;
 	
     @JsonProperty("due_date")
     @JsonFormat(pattern = "yyyy-MM-dd")
-    @NotNull(message = "Due date must not be null, insert some date in format yyyy-MM-dd")
+    @NotNull(message = BoletoConstants.ERROR_MSG_DUE_DATE_NOT_NULL)
     private Date dueDate;
     
     @JsonProperty("customer")
-    @NotEmpty(message = "Customer name must not be null nor empty")
-    @Length(max = 256, message = "Customer name must not be greater than 256 characters")
+    @NotEmpty(message = BoletoConstants.ERROR_MSG_CUSTOMER_NOT_NULL)
+    @Length(max = 256, message = BoletoConstants.ERROR_MSG_CUSTOMER_GREATER_THAN)
     private String customer;
     
     @JsonProperty("status")
-    @NotNull(message = "Status must not be null, choice between PENDING, PAID or CANCELED")
+    @NotNull(message = BoletoConstants.ERROR_MSG_STATUS_NOT_NULL)
     private BankSlipStatus status;
 
     public Date getDueDate() {

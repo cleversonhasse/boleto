@@ -49,6 +49,11 @@ public class BankSlipController {
 	@Autowired
 	private BankSlipRepository repository;
 	
+	// Construtor usado nos testes com mock
+	public BankSlipController(BankSlipRepository repository) {
+		this.repository = repository;
+	}
+
 	@GetMapping
 	public Iterable<BankSlip> findAllBankSlip() {
 		return repository.findAll();
@@ -80,9 +85,9 @@ public class BankSlipController {
 		
 		// Verifica se a Data de Vencimento é menor ou não que 10 dias para realizar o cálculo da taxa
 		if (bankSlip.getDueDate().compareTo(date.getTime()) < 0) { 
-			fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new UntilTenDays())).intValue();
+			fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new MoreThanTenDays())).intValue();
         } else {
-            fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new MoreThanTenDays())).intValue();
+            fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new UntilTenDays())).intValue();
         }
 		
 		// Monta o retorno da requisição
