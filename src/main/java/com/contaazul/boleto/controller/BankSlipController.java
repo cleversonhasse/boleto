@@ -1,5 +1,7 @@
 package com.contaazul.boleto.controller;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -23,9 +25,14 @@ import com.contaazul.boleto.entity.BankSlipRequest;
 import com.contaazul.boleto.entity.BankSlipResponse;
 import com.contaazul.boleto.entity.BankSlipResponseMessage;
 import com.contaazul.boleto.entity.BankSlipResponseWithError;
+import com.contaazul.boleto.entity.BankSlipResponseWithTax;
 import com.contaazul.boleto.model.BankSlip;
 import com.contaazul.boleto.model.BankSlipStatus;
 import com.contaazul.boleto.repository.BankSlipRepository;
+import com.contaazul.boleto.rule.CalculateTaxes;
+import com.contaazul.boleto.rule.MoreThanTenDays;
+import com.contaazul.boleto.rule.Tax;
+import com.contaazul.boleto.rule.UntilTenDays;
 
 /**
  *	Controla as requisições feitas à raiz da aplicação.
@@ -63,7 +70,30 @@ public class BankSlipController {
 			return responseWithError(HttpStatus.NOT_FOUND, "BankSlip with id " + uuid + " not found.");
 		}
 		
-		return ResponseEntity.ok(bankSlip);
+		// Data atual menos 10 dias
+        Calendar date = Calendar.getInstance();
+        date.setTime(new Date());
+        date.add(Calendar.DATE, -10);
+		
+		CalculateTaxes calculateTaxes = new CalculateTaxes();
+		int fine;
+		
+		// Verifica se a Data de Vencimento é menor ou não que 10 dias para realizar o cálculo da taxa
+		if (bankSlip.getDueDate().compareTo(date.getTime()) < 0) { 
+			fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new UntilTenDays())).intValue();
+        } else {
+            fine = new Double(calculateTaxes.calculate(bankSlip.getTotalInCents(), new MoreThanTenDays())).intValue();
+        }
+		
+		// Monta o retorno da requisição
+		BankSlipResponseWithTax responseWithTax = new BankSlipResponseWithTax(bankSlip.getId()
+																			 ,bankSlip.getDueDate()
+																			 ,bankSlip.getTotalInCents()
+																			 ,bankSlip.getCustomer()
+																			 ,bankSlip.getStatus()
+																			 ,fine);
+		
+		return ResponseEntity.ok(responseWithTax);
 	}
 	
 	/**
