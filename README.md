@@ -127,7 +127,7 @@ URL de acesso através do método GET para visualizar os detalhes de um boleto:
 
 ``http://localhost:8080/rest/bankslips/{id}``
 
-Devemos passar no lugar do {id} o id do boleto que devemos consultar.
+Devemos passar no lugar do {id} o id do boleto que queremos consultar.
 Caso tenha encontrado com sucesso, mostra os detalhes do boleto seguindo a seguinte regra:
 
 * Até 10 dias: Multa de 0,5% (Juros Simples)
