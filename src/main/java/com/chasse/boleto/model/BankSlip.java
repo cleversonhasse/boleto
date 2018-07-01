@@ -1,4 +1,4 @@
-package com.contaazul.boleto.model;
+package com.chasse.boleto.model;
 
 import java.io.Serializable;
 import java.util.Date;

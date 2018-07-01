@@ -1,4 +1,4 @@
-package com.contaazul.boleto.model;
+package com.chasse.boleto.model;
 
 
 /**

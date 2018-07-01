@@ -1,4 +1,4 @@
-package com.contaazul.boleto;
+package com.chasse.boleto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

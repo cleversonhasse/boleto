@@ -1,4 +1,4 @@
-package com.contaazul.boleto.controller;
+package com.chasse.boleto.controller;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -18,13 +18,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.contaazul.boleto.entity.BankSlipRequest;
-import com.contaazul.boleto.entity.BankSlipResponseWithError;
-import com.contaazul.boleto.entity.BankSlipResponseWithTax;
-import com.contaazul.boleto.model.BankSlip;
-import com.contaazul.boleto.model.BankSlipStatus;
-import com.contaazul.boleto.repository.BankSlipRepository;
-import com.contaazul.boleto.util.BoletoConstants;
+import com.chasse.boleto.entity.BankSlipRequest;
+import com.chasse.boleto.entity.BankSlipResponseWithError;
+import com.chasse.boleto.entity.BankSlipResponseWithTax;
+import com.chasse.boleto.model.BankSlip;
+import com.chasse.boleto.model.BankSlipStatus;
+import com.chasse.boleto.repository.BankSlipRepository;
+import com.chasse.boleto.util.BoletoConstants;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

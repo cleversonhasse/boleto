@@ -1,4 +1,4 @@
-package com.contaazul.boleto.rule;
+package com.chasse.boleto.rule;
 
 public interface Tax {
 

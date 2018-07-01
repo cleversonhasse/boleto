@@ -1,4 +1,4 @@
-package com.contaazul.boleto.repository;
+package com.chasse.boleto.repository;
 
 import java.util.Date;
 import java.util.UUID;
@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.contaazul.boleto.model.BankSlip;
-import com.contaazul.boleto.model.BankSlipStatus;
+import com.chasse.boleto.model.BankSlip;
+import com.chasse.boleto.model.BankSlipStatus;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

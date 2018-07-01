@@ -1,4 +1,4 @@
-package com.contaazul.boleto.util;
+package com.chasse.boleto.util;
 
 public final class BoletoConstants {
 

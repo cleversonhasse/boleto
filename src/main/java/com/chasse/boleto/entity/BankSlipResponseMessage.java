@@ -1,8 +1,8 @@
-package com.contaazul.boleto.entity;
+package com.chasse.boleto.entity;
 
 import java.io.Serializable;
 
-import com.contaazul.boleto.controller.BankSlipController;
+import com.chasse.boleto.controller.BankSlipController;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 /**

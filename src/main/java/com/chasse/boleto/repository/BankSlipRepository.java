@@ -1,12 +1,12 @@
-package com.contaazul.boleto.repository;
+package com.chasse.boleto.repository;
 
 import java.util.UUID;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.contaazul.boleto.model.BankSlip;
-import com.contaazul.boleto.model.BankSlipStatus;
+import com.chasse.boleto.model.BankSlip;
+import com.chasse.boleto.model.BankSlipStatus;
 
 /**
  *	Interface Repositória da BankSlip 

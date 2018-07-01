@@ -1,4 +1,4 @@
-package com.contaazul.boleto.controller;
+package com.chasse.boleto.controller;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -21,18 +21,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.contaazul.boleto.entity.BankSlipRequest;
-import com.contaazul.boleto.entity.BankSlipResponse;
-import com.contaazul.boleto.entity.BankSlipResponseMessage;
-import com.contaazul.boleto.entity.BankSlipResponseWithError;
-import com.contaazul.boleto.entity.BankSlipResponseWithTax;
-import com.contaazul.boleto.model.BankSlip;
-import com.contaazul.boleto.model.BankSlipStatus;
-import com.contaazul.boleto.repository.BankSlipRepository;
-import com.contaazul.boleto.rule.CalculateTaxes;
-import com.contaazul.boleto.rule.MoreThanTenDays;
-import com.contaazul.boleto.rule.Tax;
-import com.contaazul.boleto.rule.UntilTenDays;
+import com.chasse.boleto.entity.BankSlipRequest;
+import com.chasse.boleto.entity.BankSlipResponse;
+import com.chasse.boleto.entity.BankSlipResponseMessage;
+import com.chasse.boleto.entity.BankSlipResponseWithError;
+import com.chasse.boleto.entity.BankSlipResponseWithTax;
+import com.chasse.boleto.model.BankSlip;
+import com.chasse.boleto.model.BankSlipStatus;
+import com.chasse.boleto.repository.BankSlipRepository;
+import com.chasse.boleto.rule.CalculateTaxes;
+import com.chasse.boleto.rule.MoreThanTenDays;
+import com.chasse.boleto.rule.Tax;
+import com.chasse.boleto.rule.UntilTenDays;
 
 /**
  *	Controla as requisições feitas à raiz da aplicação.

@@ -1,4 +1,4 @@
-package com.contaazul.boleto.entity;
+package com.chasse.boleto.entity;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -10,10 +10,10 @@ import javax.validation.constraints.Positive;
 
 import org.hibernate.validator.constraints.Length;
 
-import com.contaazul.boleto.controller.BankSlipController;
-import com.contaazul.boleto.model.BankSlip;
-import com.contaazul.boleto.model.BankSlipStatus;
-import com.contaazul.boleto.util.BoletoConstants;
+import com.chasse.boleto.controller.BankSlipController;
+import com.chasse.boleto.model.BankSlip;
+import com.chasse.boleto.model.BankSlipStatus;
+import com.chasse.boleto.util.BoletoConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.contaazul</groupId>
+	<groupId>com.chasse</groupId>
 	<artifactId>boleto</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>Boleto</name>
-	<description>Projeto Boleto para Conta Azul</description>
+	<description>Projeto Boleto</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

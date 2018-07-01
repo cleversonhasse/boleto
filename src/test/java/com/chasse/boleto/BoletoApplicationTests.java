@@ -1,4 +1,4 @@
-package com.contaazul.boleto;
+package com.chasse.boleto;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
